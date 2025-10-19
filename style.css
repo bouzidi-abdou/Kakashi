@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap');
+
+/* --- المتغيرات والتنسيقات الأساسية --- */
+:root {
+    --bg-color: #121212; /* خلفية داكنة جداً */
+    --gold-color: #FFD700; /* لون ذهبي حقيقي */
+    --accent-color: #fca311; /* لون أصفر/برتقالي للتباين */
+    --card-bg: #1e1e1e; /* خلفية البطاقة الداكنة (التصميم الأصلي) */
+}
+
+body {
+    font-family: 'Almarai', sans-serif;
+    color: #f0f0f0;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    direction: rtl;
+    overflow-x: hidden; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--gold-color);
+}
+
+.gold-text {
+    color: var(--gold-color);
+    font-weight: 700;
+}
+
+/* --- تأثير الغشاوة على الفيديو (الخلفية) --- */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* صورة بديلة للخلفية - يرجى استبدالها بصورة مناسبة لديك */
+    background: url('https://images.unsplash.com/photo-1621243804936-775306a8f2e2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    filter: brightness(0.2) blur(5px);
+    z-index: -2;
+    transform: scale(1.1);
+}
+
+/* --- الـ Header والتنقل (تصميم عادي) --- */
+header {
+    background: var(--bg-color); /* خلفية معتمة للرأس */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--accent-color); /* حدود سفلية قوية */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-area .logo {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--gold-color);
+}
+
+.logo-area h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--gold-color);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a {
+    padding: 10px 15px;
+    display: block;
+    font-weight: 400;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 8px;
+}
+
+nav ul li a:hover {
+    color: var(--bg-color);
+    background-color: var(--gold-color);
+}
+
+/* --- قسم البطل (Hero) --- */
+.hero-content {
+    text-align: center;
+    padding: 150px 20px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content .subtitle {
+    color: var(--accent-color);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+/* --- شريط الإحصائيات (Stats Bar) - تصميم سابق بسيط --- */
+.stats-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    padding: 15px 0;
+    background: var(--card-bg); /* خلفية داكنة موحدة */
+    border-radius: 8px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px 25px;
+    flex: 1 1 200px; 
+    border-left: 1px solid #333; /* خط فاصل بسيط */
+}
+
+.stat-item:first-child {
+    border-left: none; /* إزالة الخط من أول عنصر */
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: var(--gold-color);
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px var(--gold-color);
+}
+
+/* تزيين الأرقام بالخط والتوهج المطلوبين */
+.stat-number {
+    display: block;
+    font-size: 2.8rem; 
+    font-weight: 900; 
+    color: var(--gold-color); 
+    margin-bottom: 5px;
+    /* إفيكت توهج ذهبي */
+    text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--gold-color); 
+    transition: all 0.5s ease;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin: 0;
+}
+
+/* --- الأقسام العامة --- */
+.content-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold-color);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--gold-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- قسم الخدمات (استعادة التصميم السابق) --- */
+.services-section {
+    background-color: #1a1a1a;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--card-bg); /* لون خلفية داكن وموحد */
+    border: 1px solid #333; /* حدود بسيطة */
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    /* إزالة تأثير الزجاج (Glassmorphism) */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 10px var(--gold-color);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: var(--gold-color);
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px var(--gold-color);
+}
+
+.service-card h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #bbb;
+    margin-bottom: 20px;
+    min-height: 50px;
+}
+
+/* شارة التسعير (Pricing Badge) */
+.pricing-badge {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+/* رابط الباقة (Package Link) */
+.package-link {
+    display: block;
+    background-color: var(--gold-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-top: 15px;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.package-link:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+
+/* --- قسم التواصل --- */
+.contact-section {
+    background-color: #121212;
+    text-align: center;
+}
+
+.contact-section > p {
+    color: #bbb;
+    margin-bottom: 40px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+/* --- التذييل (Footer) --- */
+footer {
+    background-color: #0d0d0d;
+    padding: 20px 0;
+    text-align: center;
+    color: #888;
+    border-top: 2px solid var(--accent-color);
+}
+
+/* --- تنسيقات الأزرار التفاعلية (كما هي) --- */
+.button-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 9999px;
+    transition: box-shadow 0.3s;
+}
+
+.button-wrapper:hover {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.button-wrapper .button {
+    color: var(--bg-color);
+    font-weight: 700;
+    display: block;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-wrapper .button:hover {
+    background-color: white;
+}
+
+.dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--gold-color);
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    animation: pulse 4s infinite;
+}
+
+.dot-1 { top: 0; right: 0; animation-delay: 0s; }
+.dot-2 { top: 0; left: 0; animation-delay: 0.5s; }
+.dot-3 { bottom: 0; right: 0; animation-delay: 1s; }
+.dot-4 { bottom: 0; left: 0; animation-delay: 1.5s; }
+.dot-5 { top: 50%; right: 0; animation-delay: 2s; }
+.dot-6 { top: 50%; left: 0; animation-delay: 2.5s; }
+.dot-7 { top: 0; right: 50%; animation-delay: 3s; }
+
+.button-wrapper:hover .dot {
+    animation-play-state: running;
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.1); opacity: 0; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.1); opacity: 0; }
+}
+
+/* --- تنسيق الدائرة المتحركة (Kinet.js) --- */
+#circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    background-color: var(--gold-color);
+    mix-blend-mode: screen;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+/* --- استجابة (Media Queries) --- */
+@media (max-width: 900px) {
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    nav {
+        display: none; 
+    }
+    header .container {
+        justify-content: center;
+    }
+    .stats-bar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    .stat-item {
+        border-left: none; /* إزالة الخط الفاصل الأفقي */
+        border-bottom: 1px solid #333;
+        padding: 10px 0;
+    }
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
